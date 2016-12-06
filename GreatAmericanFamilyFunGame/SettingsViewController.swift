@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var team1Name: UITextField!
     @IBOutlet var team2Name: UITextField!
@@ -54,6 +54,15 @@ class SettingsViewController: UIViewController {
             }
             
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 }
 

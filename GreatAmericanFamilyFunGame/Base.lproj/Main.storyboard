@@ -39,6 +39,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="0pk-3D-69E"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -56,6 +59,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2fy-Zw-7wK"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -73,6 +79,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mV4-Fo-VPt"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -90,6 +99,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="pe5-0E-Url"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -106,11 +118,15 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="SQs-g7-rcw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Fww-AE-nud"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SQs-g7-rcw" secondAttribute="trailing" id="GXb-p9-MQn"/>
                             <constraint firstItem="SQs-g7-rcw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="UhF-7C-pWf"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wi2-FC-706" appends="YES" id="Hgy-a5-U5d"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="oFf-ks-Dlj">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Shq-ol-sIq">
@@ -127,6 +143,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wi2-FC-706">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="BYZ-38-t0r" id="Z3w-Vf-d3T"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="884" y="-559"/>
         </scene>
@@ -193,6 +214,7 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="uTt-7M-jFb" secondAttribute="trailing" id="2Sh-j4-rbZ"/>
                             <constraint firstItem="uTt-7M-jFb" firstAttribute="top" secondItem="gIz-bI-cJl" secondAttribute="bottom" constant="8" id="Hh1-Kh-bVZ"/>
@@ -202,6 +224,9 @@
                             <constraint firstAttribute="bottom" secondItem="uTt-7M-jFb" secondAttribute="bottom" id="lhn-N0-jEe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gIz-bI-cJl" secondAttribute="trailing" id="s5u-zU-jva"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="3AH-8U-ecz" appends="YES" id="dSq-rc-e8f"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="UtD-Ne-mkw">
                         <barButtonItem key="rightBarButtonItem" title="Next Player" id="L4H-Ie-fj2">
@@ -215,6 +240,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ol7-wc-2BE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3AH-8U-ecz">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="VmG-x8-Kl5" id="WQI-Lf-vPc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1671" y="-559"/>
         </scene>

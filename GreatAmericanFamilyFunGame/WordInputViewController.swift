@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WordInputViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WordInputDelegate {
+class WordInputViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WordInputDelegate, UITextFieldDelegate {
     
     @IBOutlet var tableView: UITableView!
     var game: Game!
@@ -60,6 +60,7 @@ class WordInputViewController: UIViewController, UITableViewDelegate, UITableVie
         
         cell.wordInputDelegate = self
         cell.wordInputField.text = playerWordArray[indexPath.row]
+        cell.wordInputField.delegate = self
 
         return cell
     }
@@ -79,5 +80,14 @@ class WordInputViewController: UIViewController, UITableViewDelegate, UITableVie
             let roundVC = segue.destination as! RoundViewController
             roundVC.game = game
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 }
