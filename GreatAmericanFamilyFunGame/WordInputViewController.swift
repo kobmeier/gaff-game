@@ -21,6 +21,7 @@ class WordInputViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 250, right: 0)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.resetPlayerWordArray()
