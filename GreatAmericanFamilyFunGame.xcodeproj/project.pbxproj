@@ -18,6 +18,7 @@
 		C3CF05D31DEBF9FD00226E77 /* RoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CF05D21DEBF9FD00226E77 /* RoundViewController.swift */; };
 		C3CF05D51DEC072500226E77 /* TurnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CF05D41DEC072500226E77 /* TurnViewController.swift */; };
 		C3CF05D71DEC15A500226E77 /* GameSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CF05D61DEC15A500226E77 /* GameSummaryViewController.swift */; };
+		C3EC0EE71DF66A8200932A0A /* buzzer.wav in Resources */ = {isa = PBXBuildFile; fileRef = C3EC0EE61DF66A8200932A0A /* buzzer.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C3CF05D21DEBF9FD00226E77 /* RoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundViewController.swift; sourceTree = "<group>"; };
 		C3CF05D41DEC072500226E77 /* TurnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnViewController.swift; sourceTree = "<group>"; };
 		C3CF05D61DEC15A500226E77 /* GameSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSummaryViewController.swift; sourceTree = "<group>"; };
+		C3EC0EE61DF66A8200932A0A /* buzzer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = buzzer.wav; path = ../../buzzer.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				C3CF05D61DEC15A500226E77 /* GameSummaryViewController.swift */,
 				C3CF05BE1DEA9F8100226E77 /* Main.storyboard */,
 				C3CF05C11DEA9F8100226E77 /* Assets.xcassets */,
+				C3EC0EE61DF66A8200932A0A /* buzzer.wav */,
 				C3CF05C31DEA9F8100226E77 /* LaunchScreen.storyboard */,
 				C3CF05C61DEA9F8100226E77 /* Info.plist */,
 			);
@@ -142,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3EC0EE71DF66A8200932A0A /* buzzer.wav in Resources */,
 				C3CF05C51DEA9F8100226E77 /* LaunchScreen.storyboard in Resources */,
 				C3CF05C21DEA9F8100226E77 /* Assets.xcassets in Resources */,
 				C3CF05C01DEA9F8100226E77 /* Main.storyboard in Resources */,
@@ -328,6 +332,7 @@
 				C3CF05CB1DEA9F8100226E77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
