@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class TurnViewController: UIViewController {
     
@@ -14,8 +15,8 @@ class TurnViewController: UIViewController {
     @IBOutlet var wordLabel: UILabel!
     var round: Round!
     var seconds = 0
-    //var timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
     var timer = Timer()
+    var audioPlayer: AVAudioPlayer!
     
     @IBAction func skipTapped(_ sender: UIButton) {
         round.wordSkipped()
@@ -43,10 +44,26 @@ class TurnViewController: UIViewController {
     }
     
     func turnDone() {
+        self.playBuzzer()
         round.endTurn()
         dismiss(animated: true, completion: nil)
     }
     
+    func playBuzzer() {
+        
+        if let audioPath = Bundle.main.path(forResource: "buzzer", ofType: "wav") {
+            let audioUrl = URL(fileURLWithPath: audioPath)
+            do {
+                try audioPlayer = AVAudioPlayer(contentsOf: audioUrl)
+                audioPlayer.play()
+            }
+            catch {
+                print("Failed to create audio player")
+            }
+
+            
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
