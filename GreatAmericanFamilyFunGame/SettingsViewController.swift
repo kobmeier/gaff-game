@@ -27,14 +27,14 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         if segue.identifier == SettingsViewController.kSettingsDoneSegue {
             if let turnTimeInt = Int(secondsPerTurnField.text ?? ""), let wordNumberInt = Int(wordsPerPlayerField.text ?? "") {
                 if team1Name.text?.characters.count == 0 {
-                    game.team1.name = "Team 1"
+                    game.team1.name = "TEAM 1"
                 }
                 else {
                     game.team1.name = team1Name.text!
                 }
                 
                 if team2Name.text?.characters.count == 0 {
-                    game.team2.name = "Team 2"
+                    game.team2.name = "TEAM 2"
                 }
                 else {
                     game.team2.name = team2Name.text!
@@ -47,7 +47,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
                 
             }
             else {
-                let ac = UIAlertController(title: "Error", message: "Please make sure the numbers are valid.", preferredStyle: .alert)
+                let ac = UIAlertController(title: "ERROR", message: "PLEASE MAKE SURE THE NUMBERS ARE VALID.", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                 ac.addAction(okAction)
                 present(ac, animated: true, completion: nil)
@@ -59,6 +59,13 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let castString: NSString = (textField.text ?? "") as NSString
+        textField.text = castString.replacingCharacters(in: range, with: string.uppercased())
+
+        return false
     }
     
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {

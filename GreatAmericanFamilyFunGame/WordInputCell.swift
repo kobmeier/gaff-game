@@ -12,12 +12,22 @@ protocol WordInputDelegate: class {
     func onWordEditingChanged(cell: WordInputCell, word: String)
 }
 
-class WordInputCell: UITableViewCell {
+class WordInputCell: UITableViewCell, UITextFieldDelegate {
     
     weak var wordInputDelegate: WordInputDelegate?
     @IBOutlet var wordInputField: UITextField!
     
-    @IBAction func wordEditingChanged(_ sender: UITextField) {
-        wordInputDelegate?.onWordEditingChanged(cell: self, word: sender.text ?? "")
+    override func awakeFromNib() {
+        wordInputField.autocapitalizationType = .allCharacters
+        wordInputField.delegate = self
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let castString: NSString = (textField.text ?? "") as NSString
+        textField.text = castString.replacingCharacters(in: range, with: string.uppercased())
+        
+        wordInputDelegate?.onWordEditingChanged(cell: self, word: textField.text ?? "")
+        
+        return false
     }
 }

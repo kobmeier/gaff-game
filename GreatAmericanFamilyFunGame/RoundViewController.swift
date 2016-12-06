@@ -36,7 +36,7 @@ class RoundViewController: UIViewController {
         }
         
         round = currentRound
-        roundTypeLabel.text = round.type.rawValue
+        roundTypeLabel.text = round.type.rawValue.uppercased()
         teamLabel.text = round.getCurrentTeam().name
         team1Label.text = round.team1.name
         team2Label.text = round.team2.name
