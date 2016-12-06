@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WordInputViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WordInputDelegate, UITextFieldDelegate {
+class WordInputViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WordInputDelegate {
     
     @IBOutlet var tableView: UITableView!
     var game: Game!
@@ -25,12 +25,12 @@ class WordInputViewController: UIViewController, UITableViewDelegate, UITableVie
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.resetPlayerWordArray()
-        navigationItem.title = "Player \(currentPlayer)"
+        navigationItem.title = "PLAYER \(currentPlayer)"
     }
     
     func playerInputDone() {
         if playerWordArray.contains("") {
-            let ac = UIAlertController(title: "Error", message: "Please make sure the words are filled.", preferredStyle: .alert)
+            let ac = UIAlertController(title: "ERROR", message: "PLEASE MAKE SURE THE WORDS ARE FILLED.", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             ac.addAction(okAction)
             present(ac, animated: true, completion: nil)
@@ -60,7 +60,6 @@ class WordInputViewController: UIViewController, UITableViewDelegate, UITableVie
         
         cell.wordInputDelegate = self
         cell.wordInputField.text = playerWordArray[indexPath.row]
-        cell.wordInputField.delegate = self
 
         return cell
     }

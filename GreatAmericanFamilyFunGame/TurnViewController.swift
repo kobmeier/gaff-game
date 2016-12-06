@@ -44,6 +44,7 @@ class TurnViewController: UIViewController {
     }
     
     func turnDone() {
+        timer.invalidate()
         self.playBuzzer()
         round.endTurn()
         dismiss(animated: true, completion: nil)
@@ -60,8 +61,6 @@ class TurnViewController: UIViewController {
             catch {
                 print("Failed to create audio player")
             }
-
-            
         }
     }
     
