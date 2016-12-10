@@ -10,6 +10,7 @@ import UIKit
 
 protocol WordInputDelegate: class {
     func onWordEditingChanged(cell: WordInputCell, word: String)
+    func textFieldShouldReturn(cell: WordInputCell) -> Bool
 }
 
 class WordInputCell: UITableViewCell, UITextFieldDelegate {
@@ -29,5 +30,9 @@ class WordInputCell: UITableViewCell, UITextFieldDelegate {
         wordInputDelegate?.onWordEditingChanged(cell: self, word: textField.text ?? "")
         
         return false
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return wordInputDelegate?.textFieldShouldReturn(cell: self) ?? true
     }
 }

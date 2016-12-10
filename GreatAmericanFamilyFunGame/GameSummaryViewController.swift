@@ -22,13 +22,13 @@ class GameSummaryViewController: UIViewController {
         let score1 = game.team1.score
         let score2 = game.team2.score
         if score1 > score2 {
-            winnerLabel.text = "Team \(game.team1.name) wins!"
+            winnerLabel.text = "Team \(game.team1.name) wins!".uppercased()
         }
         else if score2 > score1 {
-            winnerLabel.text = "Team \(game.team2.name) wins!"
+            winnerLabel.text = "Team \(game.team2.name) wins!".uppercased()
         }
         else {
-            winnerLabel.text = "Tie!"
+            winnerLabel.text = "TIE"
         }
         
         team1Label.text = game.team1.name
