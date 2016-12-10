@@ -74,9 +74,23 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let castString: NSString = (textField.text ?? "") as NSString
-        textField.text = castString.replacingCharacters(in: range, with: string.uppercased())
-
-        return false
+        var shouldChange = false
+        
+        if textField == team1Name || textField == team2Name {
+            textField.text = castString.replacingCharacters(in: range, with: string.uppercased())
+            shouldChange = false
+        }
+        else if textField == wordsPerPlayerField || textField == secondsPerTurnField {
+            let nonNumbers = CharacterSet.decimalDigits.inverted
+            if string.rangeOfCharacter(from: nonNumbers) != nil {
+                textField.text = castString.replacingCharacters(in: range, with: "")
+                shouldChange = false
+            }
+            else {
+                shouldChange = true
+            }
+        }
+        return shouldChange
     }
     
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
