@@ -38,7 +38,7 @@
                                                 <rect key="frame" x="173" y="0.0" width="170" height="34.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="0pk-3D-69E"/>
                                                 </connections>
@@ -58,7 +58,7 @@
                                                 <rect key="frame" x="173" y="0.0" width="170" height="34"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="2fy-Zw-7wK"/>
                                                 </connections>
@@ -78,7 +78,7 @@
                                                 <rect key="frame" x="173" y="0.0" width="170" height="34"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="mV4-Fo-VPt"/>
                                                 </connections>
@@ -289,7 +289,7 @@
                                                     <constraint firstAttribute="height" constant="60" id="Lnc-yP-vjl"/>
                                                     <constraint firstAttribute="width" constant="100" id="lZO-IM-oLx"/>
                                                 </constraints>
-                                                <state key="normal" title="Start">
+                                                <state key="normal" title="START">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -412,7 +412,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUD-L0-AJJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="167.5" height="60"/>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Skip">
+                                                <state key="normal" title="SKIP">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -422,7 +422,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULe-iP-XH2">
                                                 <rect key="frame" x="175.5" y="0.0" width="167.5" height="60"/>
                                                 <color key="backgroundColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
-                                                <state key="normal" title="Correct">
+                                                <state key="normal" title="CORRECT">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>

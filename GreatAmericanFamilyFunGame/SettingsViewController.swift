@@ -57,7 +57,18 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         textField.resignFirstResponder()
+        if textField == team1Name {
+            team2Name.becomeFirstResponder()
+        }
+        else if textField == team2Name {
+            wordsPerPlayerField.becomeFirstResponder()
+        }
+        else if textField == wordsPerPlayerField {
+            secondsPerTurnField.becomeFirstResponder()
+        }
+        
         return true
     }
     

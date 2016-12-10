@@ -60,6 +60,12 @@ class WordInputViewController: UIViewController, UITableViewDelegate, UITableVie
         
         cell.wordInputDelegate = self
         cell.wordInputField.text = playerWordArray[indexPath.row]
+        if indexPath.row < game.settings.wordsPerPlayer - 1 {
+            cell.wordInputField.returnKeyType = .next
+        }
+        else {
+            cell.wordInputField.returnKeyType = .default
+        }
 
         return cell
     }
@@ -72,6 +78,21 @@ class WordInputViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
+    func textFieldShouldReturn(cell: WordInputCell) -> Bool {
+        
+        cell.wordInputField.resignFirstResponder()
+
+        if let indexPath = tableView.indexPath(for: cell) {
+            if indexPath.row < game.settings.wordsPerPlayer - 1 {
+                let nextIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+                if let cell = tableView.cellForRow(at: nextIndexPath) as? WordInputCell {
+                    cell.wordInputField.becomeFirstResponder()
+                }
+            }
+        }
+        return true
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "StartGame" {
             self.playerInputDone()
@@ -79,11 +100,6 @@ class WordInputViewController: UIViewController, UITableViewDelegate, UITableVie
             let roundVC = segue.destination as! RoundViewController
             roundVC.game = game
         }
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
