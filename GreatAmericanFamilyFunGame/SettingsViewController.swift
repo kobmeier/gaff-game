@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet var instructionsLabel: UILabel!
     @IBOutlet var team1Name: UITextField!
     @IBOutlet var team2Name: UITextField!
     @IBOutlet var wordsPerPlayerField: UITextField!
@@ -19,7 +20,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        instructionsLabel.text = "Welcome to the Great American Family Fun Game! Split into two teams and get started!"
     }
     
 
