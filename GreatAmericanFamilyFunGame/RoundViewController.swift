@@ -37,11 +37,23 @@ class RoundViewController: UIViewController {
         
         round = currentRound
         roundTypeLabel.text = round.type.rawValue.uppercased()
+        roundDescriptionLabel.text = self.getRoundDescriptionForType(round.type)
         teamLabel.text = round.getCurrentTeam().name
         team1Label.text = round.team1.name
         team2Label.text = round.team2.name
         score1Label.text = String(round.team1.score)
         score2Label.text = String(round.team2.score)
+    }
+    
+    func getRoundDescriptionForType(_ type: RoundType) -> String {
+        switch type {
+        case RoundType.describe:
+            return "Use your words! Describe for your team the word on the screen."
+        case RoundType.act:
+            return "No words! Act out the word on the screen."
+        case RoundType.oneword:
+            return "Use only one word! Choose wisely."
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
